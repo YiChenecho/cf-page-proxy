@@ -1,4 +1,4 @@
-export 默认 {
+export default {
   async fetch(request, env) {
     let url = new URL(request.url);
     
@@ -25,3 +25,4 @@ export 默认 {
     return env.ASSETS.fetch(request);
   }
 };
+
