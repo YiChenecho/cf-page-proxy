@@ -2,7 +2,7 @@ export default {
     async fetch(request, env) {
       let url = new URL(request.url);
       if (url.pathname.startsWith('/')) {
-        url.hostname="ibyctdwlpmru.ap-northeast-1.clawcloudrun.com";
+        url.hostname="212.50.250.152:8080";
         let new_request=new Request(url,request);
         return fetch(new_request);
       }
@@ -10,4 +10,5 @@ export default {
       return env.ASSETS.fetch(request);
     }
   };
+
 
