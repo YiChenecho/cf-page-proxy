@@ -3,14 +3,11 @@ export 默认 {
     let url = new URL(request.url);
     
     if (url.pathname.startsWith('/')) {
-      url.protocol = "http:"; 
-      url.host = "212.50.250.152:8080"; 
+      // 1. 直接使用目标真实的域名，不要用 IP
+      url.hostname = "dsjbhnjfdnsds561fd251sa51df515ds1d5sf1d5dsadfdg21315941565dc.011217.xyz"; 
+      url.port = "8080"; // 如果确实需要指定端口
       
-      // 复制原始请求
       let new_request = new Request(url, request);
-      
-      // 强制覆盖 Host 请求头为真实的域名
-      new_request.headers.set("Host", "metatube.kfcv50.de"); 
       
       try {
         return await fetch(new_request);
